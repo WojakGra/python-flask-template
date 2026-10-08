@@ -1,0 +1,39 @@
+{
+  // Python extension picks up .venv on its own (bin/ on Linux, Scripts\ on Windows).
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+  "editor.rulers": [100],
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  // ruff and mypy from .venv, so versions match uv.lock and pre-commit.
+  "ruff.importStrategy": "fromEnvironment",
+  "mypy-type-checker.importStrategy": "fromEnvironment",
+
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+
+  "files.associations": {
+    "**/templates/**/*.html": "jinja-html"
+  },
+  "emmet.includeLanguages": {
+    "jinja-html": "html"
+  },
+
+  "files.exclude": {
+    "**/__pycache__": true,
+    ".mypy_cache": true,
+    ".pytest_cache": true,
+    ".ruff_cache": true
+  },
+  "search.exclude": {
+    "uv.lock": true
+  }
+}

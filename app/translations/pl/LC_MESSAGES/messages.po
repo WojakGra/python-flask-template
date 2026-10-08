@@ -1,0 +1,174 @@
+# Polish translations for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-08 22:44+0200\n"
+"PO-Revision-Date: 2026-10-08 22:08+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pl\n"
+"Language-Team: pl <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: app/controllers/auth.py:31
+msgid "Please log in to access this page."
+msgstr "Zaloguj się, aby zobaczyć tę stronę."
+
+#: app/controllers/auth.py:43
+msgid "Invalid email or password."
+msgstr "Nieprawidłowy e-mail lub hasło."
+
+#: app/controllers/auth.py:66
+msgid "Welcome! Your account is ready."
+msgstr "Witaj! Twoje konto jest gotowe."
+
+#: app/controllers/auth.py:68 app/forms/auth.py:24
+#: app/views/templates/auth/login.html:9 app/views/templates/base.html:28
+msgid "Register"
+msgstr "Zarejestruj się"
+
+#: app/controllers/auth.py:76
+msgid "If that email is registered, a reset link is on its way."
+msgstr ""
+"Jeśli ten e-mail jest zarejestrowany, wysłaliśmy na niego link do zmiany "
+"hasła."
+
+#: app/controllers/auth.py:78
+msgid "Reset password"
+msgstr "Resetuj hasło"
+
+#: app/controllers/auth.py:86
+msgid "This reset link is invalid or has expired."
+msgstr "Ten link jest nieprawidłowy albo wygasł."
+
+#: app/controllers/auth.py:95
+msgid "Password changed. You can sign in now."
+msgstr "Hasło zmienione. Możesz się zalogować."
+
+#: app/controllers/auth.py:97
+msgid "Set a new password"
+msgstr "Ustaw nowe hasło"
+
+#: app/controllers/web.py:45
+msgid "Item added."
+msgstr "Dodano element."
+
+#: app/forms/auth.py:10 app/forms/auth.py:17 app/forms/auth.py:28
+msgid "Email"
+msgstr "E-mail"
+
+#: app/forms/auth.py:11 app/forms/auth.py:19
+msgid "Password"
+msgstr "Hasło"
+
+#: app/forms/auth.py:12
+msgid "Remember me"
+msgstr "Zapamiętaj mnie"
+
+#: app/forms/auth.py:13 app/views/templates/auth/login.html:3
+#: app/views/templates/auth/login.html:6 app/views/templates/base.html:27
+msgid "Sign in"
+msgstr "Zaloguj się"
+
+#: app/forms/auth.py:22 app/forms/auth.py:37
+msgid "Repeat password"
+msgstr "Powtórz hasło"
+
+#: app/forms/auth.py:29
+msgid "Send reset link"
+msgstr "Wyślij link"
+
+#: app/forms/auth.py:34
+msgid "New password"
+msgstr "Nowe hasło"
+
+#: app/forms/auth.py:39
+msgid "Set password"
+msgstr "Ustaw hasło"
+
+#: app/forms/item.py:8
+msgid "Title"
+msgstr "Tytuł"
+
+#: app/forms/item.py:9
+msgid "Add"
+msgstr "Dodaj"
+
+#: app/services/auth_service.py:17
+#, python-format
+msgid "Password must be at least %(n)d characters."
+msgstr "Hasło musi mieć co najmniej %(n)d znaków."
+
+#: app/services/auth_service.py:29
+msgid "This email is already registered."
+msgstr "Ten e-mail jest już zarejestrowany."
+
+#: app/services/auth_service.py:52
+msgid "Reset your password"
+msgstr "Zmiana hasła"
+
+#: app/services/item_service.py:23
+msgid "Title must be 1 to 200 characters long."
+msgstr "Tytuł musi mieć od 1 do 200 znaków."
+
+#: app/views/templates/base.html:9 app/views/templates/base.html:15
+msgid "Flask App"
+msgstr "Aplikacja Flask"
+
+#: app/views/templates/base.html:24
+msgid "Sign out"
+msgstr "Wyloguj"
+
+#: app/views/templates/auth/login.html:8
+msgid "Forgot your password?"
+msgstr "Nie pamiętasz hasła?"
+
+#: app/views/templates/auth/login.html:9
+msgid "New here?"
+msgstr "Pierwszy raz tutaj?"
+
+#: app/views/templates/email/reset_password.html:1
+#: app/views/templates/email/reset_password.txt:1
+msgid "Someone asked to reset the password for your account."
+msgstr "Ktoś poprosił o zmianę hasła do Twojego konta."
+
+#: app/views/templates/email/reset_password.html:2
+msgid "Choose a new password"
+msgstr "Ustaw nowe hasło"
+
+#: app/views/templates/email/reset_password.html:3
+#: app/views/templates/email/reset_password.txt:6
+msgid "If it wasn't you, ignore this email. Your password stays the same."
+msgstr "Jeśli to nie Ty, zignoruj tę wiadomość. Twoje hasło się nie zmieni."
+
+#: app/views/templates/email/reset_password.txt:3
+msgid "Open this link to choose a new password:"
+msgstr "Otwórz ten link, aby ustawić nowe hasło:"
+
+#: app/views/templates/errors/error.html:6
+msgid "Back to the home page"
+msgstr "Wróć na stronę główną"
+
+#: app/views/templates/items/_list.html:14
+#, python-format
+msgid "<a href=\"%(url)s\">Sign in</a> to add items."
+msgstr "<a href=\"%(url)s\">Zaloguj się</a>, aby dodawać elementy."
+
+#: app/views/templates/items/_list.html:25
+msgid "No items yet."
+msgstr "Nie ma jeszcze żadnych elementów."
+
+#: app/views/templates/items/index.html:2
+#: app/views/templates/items/index.html:4
+msgid "Items"
+msgstr "Elementy"
+

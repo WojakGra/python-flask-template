@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}{{ error.code }} {{ error.name }}{% endblock %}
+{% block content %}
+  <h1 class="h3">{{ error.code }} {{ error.name }}</h1>
+  <p>{{ error.description }}</p>
+  <a href="{{ url_for('web.index') }}">{{ _("Back to the home page") }}</a>
+{% endblock %}

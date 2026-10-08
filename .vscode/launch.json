@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Breakpoints in views and templates. No auto-reload here, `uv run poe dev` has it.
+      "name": "Flask",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "flask",
+      "args": ["run", "--debug", "--no-debugger", "--no-reload"],
+      "jinja": true,
+      "preLaunchTask": "poe prepare"
+    }
+  ]
+}

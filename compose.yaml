@@ -1,0 +1,51 @@
+x-app: &app
+  build: .
+  image: python-flask-template
+  environment:
+    FLASK_SECRET_KEY: ${FLASK_SECRET_KEY:?set FLASK_SECRET_KEY in .env}
+    FLASK_SQLALCHEMY_DATABASE_URI: postgresql+psycopg://app:app@db:5432/app
+    FLASK_MAIL_SERVER: mailpit
+
+services:
+  db:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: app
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app -d app"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+
+  # Catches all outgoing mail. Inbox: http://localhost:8025
+  mailpit:
+    image: axllent/mailpit:v1.31
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  migrate:
+    <<: *app
+    command: ["flask", "db", "upgrade"]
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    <<: *app
+    ports:
+      - "8000:8000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      mailpit:
+        condition: service_started
+
+volumes:
+  pgdata:

@@ -1,0 +1,29 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% from "bootstrap5/pagination.html" import render_pagination %}
+{% from "bootstrap5/utils.html" import render_messages %}
+{# Swapped as a whole by htmx after adding an item #}
+<div id="items">
+  {# On full pages base.html already consumed the flashes; this shows them for htmx swaps #}
+  {{ render_messages(dismissible=True) }}
+  {% if current_user.is_authenticated %}
+    {% set url = url_for("web.create_item") %}
+    {{ render_form(form, action=url, extra_classes="mb-4",
+                   render_kw={"hx-post": url, "hx-target": "#items", "hx-swap": "outerHTML"}) }}
+  {% else %}
+    <p class="text-body-secondary">
+      {% trans url=url_for("auth.login", next=request.path) %}<a href="{{ url }}">Sign in</a> to add items.{% endtrans %}
+    </p>
+  {% endif %}
+
+  <ul class="list-group mb-3">
+    {% for item in items %}
+      <li class="list-group-item d-flex justify-content-between">
+        <span>{{ item.title }}</span>
+        <small class="text-body-secondary">{{ item.created_at|datetimeformat("short") }}</small>
+      </li>
+    {% else %}
+      <li class="list-group-item text-body-secondary">{{ _("No items yet.") }}</li>
+    {% endfor %}
+  </ul>
+  {% if items.pages > 1 %}{{ render_pagination(items) }}{% endif %}
+</div>
