@@ -8,7 +8,7 @@ Only the latest commit on `master` gets security fixes.
 
 Please do not open a public issue.
 
-Report it privately through GitHub: go to the **Security** tab of this repository and click **Report a vulnerability**. If you cannot use GitHub, email jakub@wojak.works instead. Include:
+Report it privately through GitHub: go to the **Security** tab of this repository and click **Report a vulnerability**. If you cannot use GitHub, email **jakub@wojak.works** instead. Include:
 
 - what the problem is and where it is (file, route, endpoint),
 - steps to reproduce or a proof of concept,
